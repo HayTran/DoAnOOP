@@ -1,0 +1,16 @@
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\bin\Debug\QuanLyCuaHang.exe
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\bin\Debug\QuanLyCuaHang.pdb
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.Properties.Resources.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.csproj.GenerateResource.Cache
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.exe
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.pdb
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.csprojResolveAssemblyReference.cache
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmBanHang.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQuanLy.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQLTaiKhoan.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmDangNhap.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQLKhoHang.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQLNhanVien.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQLKhachHang.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmQLDonHang.resources
+E:\HK7\OOP\DoAN\QuanLyCuaHang\QuanLyCuaHang\obj\x86\Debug\QuanLyCuaHang.FrmChiTietDonHang.resources
