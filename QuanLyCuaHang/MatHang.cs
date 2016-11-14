@@ -69,10 +69,11 @@ namespace QuanLyCuaHang
         // thực hiện việc trừ sản phẩm trong kho khi bán sản phẩm cho khách hàng
         public void truSanPham(int soLuongMua)
         {
-                soLuong = soLuong - soLuongMua;
-                KetNoiDuLieu.openConnect();
-                KetNoiDuLieu.executeQuery("update KhoHang set SoLuong = '"+Convert.ToInt32(soLuong)+"' where MaMH = '"+maMH+"' ");
-                KetNoiDuLieu.closeConnect();
+           //     soLuong = soLuong - soLuongMua;
+            //    KetNoiDuLieu.openConnect();
+            //    KetNoiDuLieu.executeQuery("update KhoHang set SoLuong = '"+Convert.ToInt32(soLuong)+"' where MaMH = '"+maMH+"' ");
+            //    KetNoiDuLieu.closeConnect();
+            MessageBox.Show();
            
         }
         //Kiểm tra xem mã sản nhập vào có trùng với sản phẩm có trong kho hàng chưa? Sản phẩm bị trùng khi 2 khóa MaMH và NgaySX là giống nhau. Nếu có thì yêu cầu người dùng dùng chức năng(thao tác) chỉnh sửa, không được dùng chắc năng thêm
