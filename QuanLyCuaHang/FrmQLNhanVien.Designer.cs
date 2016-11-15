@@ -36,6 +36,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDiaChi = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
@@ -48,7 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new System.Windows.Forms.RichTextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,6 +131,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCMND);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.radNu);
@@ -149,14 +153,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
             // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(481, 104);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(217, 54);
+            this.txtDiaChi.TabIndex = 19;
+            this.txtDiaChi.Text = "";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(356, 74);
+            this.label8.Location = new System.Drawing.Point(356, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 19);
             this.label8.TabIndex = 18;
             this.label8.Text = "Địa chỉ:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // radNu
             // 
@@ -190,7 +203,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(481, 36);
+            this.txtSDT.Location = new System.Drawing.Point(481, 71);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(174, 27);
             this.txtSDT.TabIndex = 13;
@@ -199,7 +212,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(356, 39);
+            this.label7.Location = new System.Drawing.Point(356, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 19);
             this.label7.TabIndex = 12;
@@ -255,13 +268,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NV:";
             // 
-            // txtDiaChi
+            // txtCMND
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(481, 68);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(217, 90);
-            this.txtDiaChi.TabIndex = 19;
-            this.txtDiaChi.Text = "";
+            this.txtCMND.Location = new System.Drawing.Point(481, 38);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(174, 27);
+            this.txtCMND.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(356, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 19);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Số CMND:";
             // 
             // FrmQLNhanVien
             // 
@@ -307,5 +328,7 @@
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.Label label5;
     }
 }

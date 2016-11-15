@@ -17,6 +17,7 @@ namespace QuanLyCuaHang
         }
 
         #region
+        int function = 0;
         private void moEdit()
         {
             btnChapNhan.Enabled = true;
@@ -44,8 +45,9 @@ namespace QuanLyCuaHang
             txtMaNV.Text = dgvNhanVien.Rows[t].Cells[0].Value.ToString();
             txtTenNV.Text = dgvNhanVien.Rows[t].Cells[1].Value.ToString();
             txtNgaySinh.Text = dgvNhanVien.Rows[t].Cells[3].Value.ToString();
-            txtSDT.Text = dgvNhanVien.Rows[t].Cells[4].Value.ToString();
-            txtDiaChi.Text = dgvNhanVien.Rows[t].Cells[5].Value.ToString();
+            txtCMND.Text = dgvNhanVien.Rows[t].Cells[4].Value.ToString();
+            txtSDT.Text = dgvNhanVien.Rows[t].Cells[5].Value.ToString();
+            txtDiaChi.Text = dgvNhanVien.Rows[t].Cells[6].Value.ToString();
             if (dgvNhanVien.Rows[t].Cells[2].Value.ToString() == "True")
             {
                 radNam.Checked = true;
@@ -63,61 +65,62 @@ namespace QuanLyCuaHang
         {
             loadBang();
         }
-        int i = 0;
+       
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            i = 0;
-            khoaEdit();
+            function = 0;
+            khoaEdit();        
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            i = 1;
+            function = 1;
             moEdit();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            i = 2;
+            function = 2;
             moEdit();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            KetNoiDuLieu.openConnect();
-            DialogResult = MessageBox.Show("Ban co muon xoa khong?", "Thong bao ", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (DialogResult == DialogResult.OK)
-            {
-                KetNoiDuLieu.executeQuery("delete from NhanVien where MaNV = '" + dgvNhanVien.Rows[dgvNhanVien.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                loadBang();
-            }
-            KetNoiDuLieu.closeConnect();
+            NhanVien nv = new NhanVien(txtMaNV.Text, txtTenNV.Text, radNam.Checked, txtNgaySinh.Text, txtCMND.Text, txtNgaySinh.Text, txtDiaChi.Text);
+            nv.xoaThongTin(dgvNhanVien.Rows[dgvNhanVien.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            loadBang();
         } 
        
         #endregion
 
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
-
-            if (i == 1)
+            NhanVien nv = new NhanVien(txtMaNV.Text, txtTenNV.Text, radNam.Checked, txtNgaySinh.Text, txtCMND.Text, txtNgaySinh.Text, txtDiaChi.Text);
+            if (function == 1)
             {
-                KetNoiDuLieu.openConnect();
-                KetNoiDuLieu.executeQuery("insert into NhanVien values ('" + txtMaNV.Text + "','" + txtTenNV.Text + "','" + radNam.Checked + "','" + Convert.ToDateTime(txtNgaySinh.Text) + "','" + txtSDT.Text + "','"+txtDiaChi.Text+"')");
-                loadBang();
-                KetNoiDuLieu.closeConnect();
+                nv.themThongTin();
             }
             else
-                if (i == 2)
+                if (function == 2)
                 {
-                    KetNoiDuLieu.openConnect();
-                    KetNoiDuLieu.executeQuery("update NhanVien set MaNV='" + txtMaNV.Text + "',TenNV='" + txtTenNV.Text + "',Nam='" + radNam.Checked + "',NgaySinh='" + Convert.ToDateTime(txtNgaySinh.Text) + "',SoDienThoai='" + txtSDT.Text + "',DiaChi='"+txtDiaChi.Text+"' where MaNV = '" + dgvNhanVien.Rows[dgvNhanVien.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                    loadBang();
-                    KetNoiDuLieu.closeConnect();
+                    int t = dgvNhanVien.CurrentCell.RowIndex;
+                    nv.suaThongTin(dgvNhanVien.Rows[t].Cells[0].Value.ToString());
                 }
+            loadBang();
         }
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     
 

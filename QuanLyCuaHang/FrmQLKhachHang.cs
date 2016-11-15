@@ -15,7 +15,7 @@ namespace QuanLyCuaHang
         {
             InitializeComponent();
         }
-
+        int function = 0;
         #region
         private void moEdit()
         {
@@ -44,22 +44,22 @@ namespace QuanLyCuaHang
             loadBang();
             khoaEdit();
         }
-        int i = 0;
+      
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            i = 1;
+            function = 1;
             moEdit();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            i = 2;
+            function = 2;
             moEdit();
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            i = 0;
+            function = 0;
             khoaEdit();
         }
 
@@ -87,21 +87,17 @@ namespace QuanLyCuaHang
 
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
-            if (i == 1)
+            KhachHang kh = new KhachHang(txtMaKH.Text, txtTenKH.Text, radNam.Checked, txtSDT.Text, txtDiaChi.Text);
+            if (function == 1)
             {
-                KetNoiDuLieu.openConnect();
-                KetNoiDuLieu.executeQuery("insert into KhachHang values ('" + txtMaKH.Text + "','" + txtTenKH.Text + "','" + radNam.Checked + "','" + txtSDT.Text + "','" + txtDiaChi.Text + "')");
-                loadBang();
-                KetNoiDuLieu.closeConnect();
+                kh.themThongTin();
             }
             else
-                if (i == 2)
+                if (function == 2)
                 {
-                    KetNoiDuLieu.openConnect();
-                    KetNoiDuLieu.executeQuery("update KhachHang set MaKH='" + txtMaKH.Text + "',TenKH='" + txtTenKH.Text + "',Nam='" + radNam.Checked + "',SoDienThoai='" + txtSDT.Text + "',DiaChi='" + txtDiaChi.Text + "' where MaKH = '" + dgvKhachHang.Rows[dgvKhachHang.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                    loadBang();
-                    KetNoiDuLieu.closeConnect();
+                    kh.suaThongTin(dgvKhachHang.Rows[dgvKhachHang.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 }
+            loadBang();
         }
 
 

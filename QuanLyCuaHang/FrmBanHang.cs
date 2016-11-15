@@ -16,10 +16,12 @@ namespace QuanLyCuaHang
             InitializeComponent(); 
 
         }
-        
+        private int tien =0 ;
+        private double giamGia = 0;
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
-           
+          
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,45 +31,45 @@ namespace QuanLyCuaHang
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            MatHang a = new MatHang();
-            a.layDuLieu(txtMaMH.Text);
-            a.truSanPham(int.Parse(txtSoLuongMua.Text));
-            txtSoLuongCon.Text = a.soLuong.ToString();
+           
         }
 
-       
         private void txtGiaTien_TextChanged(object sender, EventArgs e)
         {
             
         }
-
         private void txtMaMH_TextChanged(object sender, EventArgs e)
         {
-            MatHang a = new MatHang();
-            a.layDuLieu(txtMaMH.Text);
-            txtGiaTien.Text = a.giaTien.ToString();
-            txtSoLuongCon.Text = a.soLuong.ToString();
+         
+        }
+        private void txtSoLuongMua_TextChanged(object sender, EventArgs e)
+        {
+        
           
         }
 
-        private void txtSoLuongMua_TextChanged(object sender, EventArgs e)
-        {
-            /*MatHang a = new MatHang(txtMaMH.Text);
-            if (txtSoLuongMua.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập vào số lượng");
-            }
-            else
-            {
-                a.kiemTraSanPham(Convert.ToInt32(txtSoLuongMua.Text));
-            }
-          */
+        private void txtGiamGia_TextChanged(object sender, EventArgs e)
+        { 
         }
 
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+          
+        }
 
-        
+        private void txtGiamGia_KeyUp(object sender, KeyEventArgs e)
+        {
+       
+        }
 
+        private void radNam_CheckedChanged(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void radNu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

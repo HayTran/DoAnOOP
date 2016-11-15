@@ -11,7 +11,7 @@ namespace QuanLyCuaHang
 {
     public partial class FrmQLKhoHang : Form
     {
-        int i = 0;
+        int function = 0;
         public FrmQLKhoHang()
         {
             InitializeComponent();
@@ -45,14 +45,14 @@ namespace QuanLyCuaHang
        }
          private void btnThem_Click(object sender, EventArgs e)
          {
-             i = 1;
+             function = 1;
              moEdit();
          }
 
        
          private void btnHuy_Click(object sender, EventArgs e)
          {
-             i = 0;
+             function = 0;
              khoaEdit();
          }
 
@@ -72,50 +72,30 @@ namespace QuanLyCuaHang
 
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
-            if (i == 1)
+            KhoHang a = new KhoHang(txtMaMH.Text, txtTenMH.Text, txtSoLuong.Text, txtGiaTien.Text, dateNgayNhap.Text, dateNgaySX.Text, dateHSD.Text, txtNguoiNhap.Text);
+            if (function == 1)
             {
-                MatHang mH = new MatHang();
-                mH.layDuLieu(txtMaMH.Text);
-                if (mH.kiemTraTrungDuLieu() == 1)
-                {
-                    MessageBox.Show("Bị trùng hàng có trong kho! Bạn chỉ có thể sửa để thêm số lượng!","Cảnh báo!");
-                    goto A;
-                }
-                KetNoiDuLieu.openConnect();
-                KetNoiDuLieu.executeQuery("insert into KhoHang values ('" + txtMaMH.Text + "','" + txtTenMH.Text + "','" + int.Parse(txtSoLuong.Text)+ "','" + int.Parse(txtGiaTien.Text) + "','" + Convert.ToDateTime(dateNgayNhap.Text) + "','" + Convert.ToDateTime(dateNgaySX.Text) + "','" + Convert.ToDateTime(dateHSD.Text) + "','" + txtNguoiNhap.Text + "')");
-                loadBang();
-                KetNoiDuLieu.closeConnect();
+                a.themSanPham();
             }
             else
-                if (i == 2)
+                if (function == 2)
                 {
-                    KetNoiDuLieu.openConnect();
-                    KetNoiDuLieu.executeQuery("update KhoHang set MaMH= '" + txtMaMH.Text + "',TenMH = '" + txtTenMH.Text + "',SoLuong = '" + int.Parse(txtSoLuong.Text) + "',GiaTien ='" + int.Parse(txtGiaTien.Text) + "',NgayNhap='" + Convert.ToDateTime(dateNgayNhap.Text) + "',NgaySX ='" + Convert.ToDateTime(dateNgaySX.Text) + "',HSD='" + Convert.ToDateTime(dateHSD.Text) + "',NguoiNhap ='" + txtNguoiNhap.Text + "' where MaMH = '" + dgvKhoHang.Rows[dgvKhoHang.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                    loadBang();
-                    KetNoiDuLieu.closeConnect();
+                    a.suaSanPham(dgvKhoHang.Rows[dgvKhoHang.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 }
-            A:
             loadBang();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
     
-            i = 2;
+            function = 2;
             moEdit();
         }
-
+       
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            KetNoiDuLieu.openConnect();
-            DialogResult = MessageBox.Show("Ban co muon xoa khong?", "Thong bao ", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (DialogResult == DialogResult.OK)
-            {
-               
-                KetNoiDuLieu.executeQuery("delete from KhoHang where MaMH = '" + dgvKhoHang.Rows[dgvKhoHang.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                loadBang();
-            }
-            KetNoiDuLieu.closeConnect();
+          
+            loadBang();
         }
 
         private void dateNgayNhap_ValueChanged(object sender, EventArgs e)
