@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang.cs" />
     <Compile Include="FrmBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,7 +87,7 @@
     </Compile>
     <Compile Include="KhachHang.cs" />
     <Compile Include="KiemTraForm.cs" />
-    <Compile Include="KhoHang.cs" />
+    <Compile Include="MatHang.cs" />
     <Compile Include="ConNguoi.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />

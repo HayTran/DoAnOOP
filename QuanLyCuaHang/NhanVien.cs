@@ -9,6 +9,7 @@ namespace QuanLyCuaHang
 {
     class NhanVien:ConNguoi
     {
+        public static string maNVDangNhap = "";
         // cung cấp thêm các thuộc tính riêng mà Nhân viên cần có
         public string soCMND;
         public DateTime ngaySinh;
@@ -27,7 +28,6 @@ namespace QuanLyCuaHang
         {
             this.maSo = maSo;
             this.matKhau = matKhau;
-            this.admin = admin;
         }
         // kiểm tra đăng nhập bằng cách dùng một đối tượng để truy cập
         public int kiemTraDangNhap()
@@ -42,10 +42,15 @@ namespace QuanLyCuaHang
                 {
                     return 1;
                 }
-                else return 0;
+                else
+                {
+                    maNVDangNhap = maSo;
+                    return 0;
+                }
             }
             else return -1;
         }
+
         // lưu mã nhân viên người vừa đăng nhập xuống CSDL nhằm để lấy lên khi dùng trong trường hợp mở Form bán hàn
         // khởi tạo một đối tượng thuộc lớp NhanVien chưa có trong CSDL (phục vụ cho bảng NhanVien)
         public NhanVien (string maSo, string hoTen, bool gioiTinh, string ngaySinh, string soCMND, string soDienThoai, string diaChi)

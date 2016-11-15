@@ -18,7 +18,7 @@ namespace QuanLyCuaHang
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            NhanVien a = new NhanVien(txtMaNhanVien.Text,txtMatKhau.Text);
+            NhanVien a = new NhanVien(txtMaNhanVien.Text, txtMatKhau.Text);
             try
             {
                 if (a.kiemTraDangNhap() == 1)

@@ -72,7 +72,7 @@ namespace QuanLyCuaHang
 
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
-            KhoHang a = new KhoHang(txtMaMH.Text, txtTenMH.Text, txtSoLuong.Text, txtGiaTien.Text, dateNgayNhap.Text, dateNgaySX.Text, dateHSD.Text, txtNguoiNhap.Text);
+            MatHang a = new MatHang(txtMaMH.Text, txtTenMH.Text, txtSoLuong.Text, txtGiaTien.Text, dateNgayNhap.Text, dateNgaySX.Text, dateHSD.Text, txtNguoiNhap.Text);
             if (function == 1)
             {
                 a.themSanPham();

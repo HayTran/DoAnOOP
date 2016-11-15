@@ -28,9 +28,9 @@ namespace QuanLyCuaHang
             {
                 conn.Open();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ket Noi That Bai");
+                MessageBox.Show("ERROR: " + ex.Message);
             }
 
         }

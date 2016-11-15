@@ -7,7 +7,6 @@ namespace QuanLyCuaHang
 {
     class KiemTraForm
     {
-        string textBox;
         public static void kiemTraKhoangTrang(string textBox, string cellCanDien)
         {
             if (textBox == "")

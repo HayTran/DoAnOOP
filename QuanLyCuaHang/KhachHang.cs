@@ -13,11 +13,18 @@ namespace QuanLyCuaHang
         // khởi tạo một đối tượng thuộc lớp NhanVien chưa có trong CSDL
         public KhachHang (string maSo, string hoTen, bool gioiTinh, string soDienThoai, string diaChi)
         {
-            this.maSo = maSo;
-            this.hoTen = hoTen;
-            this.gioiTinh = gioiTinh;        
-            this.soDienThoai = soDienThoai;
-            this.diaChi  = diaChi;
+                this.maSo = maSo;
+                this.hoTen = hoTen;
+                this.gioiTinh = gioiTinh;
+                this.soDienThoai = soDienThoai;
+                this.diaChi = diaChi;
+        }
+        public string toString()
+        {
+            if (gioiTinh == true)
+                return "Mã số khách hàng: " + maSo + "\t\tTên khách hàng: " + hoTen + "\nGiới tính: Nam " + "\tSố điện thoại: " + soDienThoai + "\nĐịa chỉ: " + diaChi;
+            else
+                return "Mã số khách hàng: " + maSo + "\t\tTên khách hàng: " + hoTen + "\nGiới tính: Nữ " + "\tSố điện thoại: " + soDienThoai + "\nĐịa chỉ: " + diaChi;
         }
         // lấy dữ liệu từ CSDL lên, cung cấp tất cả các thuộc tính cho đối tượng thuộc class KhachHang
         public void layDuLieu(string maSo)
