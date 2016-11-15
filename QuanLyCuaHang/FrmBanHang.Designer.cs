@@ -62,6 +62,8 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaDH = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSDT = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.txtMaDH = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -407,6 +407,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
+            // txtMaDH
+            // 
+            this.txtMaDH.Enabled = false;
+            this.txtMaDH.Location = new System.Drawing.Point(156, 37);
+            this.txtMaDH.Name = "txtMaDH";
+            this.txtMaDH.Size = new System.Drawing.Size(100, 27);
+            this.txtMaDH.TabIndex = 43;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(19, 40);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 19);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "Mã đơn hàng:";
+            // 
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -417,6 +434,7 @@
             this.btnHuy.TabIndex = 42;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // groupBox2
             // 
@@ -490,23 +508,6 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(146, 27);
             this.txtMaKH.TabIndex = 32;
-            // 
-            // txtMaDH
-            // 
-            this.txtMaDH.Enabled = false;
-            this.txtMaDH.Location = new System.Drawing.Point(156, 37);
-            this.txtMaDH.Name = "txtMaDH";
-            this.txtMaDH.Size = new System.Drawing.Size(100, 27);
-            this.txtMaDH.TabIndex = 43;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 40);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 19);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "Mã đơn hàng:";
             // 
             // FrmBanHang
             // 

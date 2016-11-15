@@ -44,7 +44,15 @@ namespace QuanLyCuaHang
                 MessageBox.Show("Vui lòng nhập số tiền!");
             }
             else
-            txtTienTraLaiChoKhach.Text = Convert.ToString(BanHang.tinhTienTraLai(txtTienKhachDua.Text, txtTienKhachPhaiTra.Text));
+            {
+                if (txtTienKhachDua.Text == "" && txtTienKhachPhaiTra.Text == "")
+                {
+                    txtTienKhachDua.Text = "";
+                }
+                else
+                txtTienTraLaiChoKhach.Text = Convert.ToString(BanHang.tinhTienTraLai(txtTienKhachDua.Text, txtTienKhachPhaiTra.Text));
+            }
+            
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -106,6 +114,11 @@ namespace QuanLyCuaHang
                 MessageBox.Show(BanHang.xuatHoaDon(kH));
                 khoiTao();
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            khoiTao();
         }
     }
 }
