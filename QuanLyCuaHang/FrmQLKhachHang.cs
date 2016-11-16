@@ -113,6 +113,13 @@ namespace QuanLyCuaHang
             KetNoiDuLieu.closeConnect();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenu frm = new FrmMenu();
+            frm.Show();
+            this.Hide();
+        }
+
       
         
 

@@ -85,9 +85,11 @@ namespace QuanLyCuaHang
         // thêm thông tin của một đối tượng nhân viên chưa có trong CSDL
         public override void themThongTin()
         {
+            themTaiKhoan();
             KetNoiDuLieu.openConnect();
             KetNoiDuLieu.executeQuery("insert into NhanVien values ('"+maSo+"','"+hoTen+"','"+gioiTinh+"','"+ngaySinh+"','"+soCMND+"','"+soDienThoai+"','"+diaChi+"')");
             KetNoiDuLieu.closeConnect();
+
         }
         // sửa một đối tượng thuộc class NhanVien đã có trong CSDL. 
         public override void suaThongTin(string currentCell)
@@ -104,7 +106,22 @@ namespace QuanLyCuaHang
             if (dR == DialogResult.OK)
             {
                 KetNoiDuLieu.executeQuery("delete from NhanVien where MaNV = '" + currentCell + "' ");
+                xoaTaiKhoan(currentCell);
             }
+            KetNoiDuLieu.closeConnect();
+        }
+        // thêm tài khoản vào trong bảng Tài khoản
+        public void themTaiKhoan()
+        {
+            KetNoiDuLieu.openConnect();
+            KetNoiDuLieu.executeQuery("insert into TaiKhoan values ('"+maSo+"','')");
+            KetNoiDuLieu.closeConnect();
+        }
+        // xóa tài khoản trong bảng Tài khoản
+        public void xoaTaiKhoan(string currentCell)
+        {
+            KetNoiDuLieu.openConnect();
+            KetNoiDuLieu.executeQuery("delete from TaiKhoan where MaNV = '" +currentCell+ "' ");
             KetNoiDuLieu.closeConnect();
         }
     }

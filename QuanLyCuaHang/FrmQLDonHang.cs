@@ -79,7 +79,6 @@ namespace QuanLyCuaHang
             {
                 KetNoiDuLieu.openConnect();
                 KetNoiDuLieu.executeQuery("insert into DonHang values ('"+txtMaDH.Text+"','"+txtMaKH.Text+"','"+int.Parse(txtTienDH.Text)+"','"+Convert.ToDateTime(txtNgayXuatDH.Text)+"','"+txtMaNV.Text+"')");
-                loadBang();
                 KetNoiDuLieu.closeConnect();
             }
             else
@@ -87,9 +86,9 @@ namespace QuanLyCuaHang
                 {
                     KetNoiDuLieu.openConnect();
                     KetNoiDuLieu.executeQuery("update DonHang set MaDH='" + txtMaDH.Text + "',MaKH='" + txtMaKH.Text + "',TienDH='" + int.Parse(txtTienDH.Text) + "',NgayXuatDH='" + Convert.ToDateTime(txtNgayXuatDH.Text) + "', MaNV = '"+txtMaNV.Text+"' where MaDH = '" + dgvDonHang.Rows[dgvDonHang.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
-                    loadBang();
                     KetNoiDuLieu.closeConnect();
                 }
+            loadBang();
         }
 
         private void dgvDonHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,8 +97,17 @@ namespace QuanLyCuaHang
             txtMaDH.Text = dgvDonHang.Rows[t].Cells[0].Value.ToString();
             txtMaKH.Text = dgvDonHang.Rows[t].Cells[1].Value.ToString();
             txtTienDH.Text = dgvDonHang.Rows[t].Cells[2].Value.ToString();
-            txtNgayXuatDH.Text = dgvDonHang.Rows[t].Cells[3].Value.ToString();
-            txtMaNV.Text = dgvDonHang.Rows[t].Cells[4].Value.ToString();
+            txtTienGiamGia.Text = dgvDonHang.Rows[t].Cells[3].Value.ToString();
+            txtTienThucTe.Text = dgvDonHang.Rows[t].Cells[4].Value.ToString();
+            txtNgayXuatDH.Text = dgvDonHang.Rows[t].Cells[5].Value.ToString();
+            txtMaNV.Text = dgvDonHang.Rows[t].Cells[6].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenu frm = new FrmMenu();
+            frm.Show();
+            this.Hide();
         }
 
       

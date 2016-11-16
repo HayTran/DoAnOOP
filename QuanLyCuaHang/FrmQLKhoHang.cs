@@ -108,6 +108,18 @@ namespace QuanLyCuaHang
 
         }
 
+        private void txtNguoiNhap_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenu frm = new FrmMenu();
+            frm.Show();
+            this.Hide();
+        }
+
  
 
 

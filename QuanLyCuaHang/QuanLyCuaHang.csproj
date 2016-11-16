@@ -66,6 +66,12 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQLDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +98,6 @@
     <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmQuanLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQuanLy.Designer.cs">
-      <DependentUpon>FrmQuanLy.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +110,12 @@
     <Compile Include="FrmQLKhachHang.Designer.cs">
       <DependentUpon>FrmQLKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmQLLuongNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQLLuongNV.Designer.cs">
+      <DependentUpon>FrmQLLuongNV.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmBanHang.resx">
       <DependentUpon>FrmBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,14 +125,14 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQLDonHang.resx">
       <DependentUpon>FrmQLDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQLTaiKhoan.resx">
       <DependentUpon>FrmQLTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuanLy.resx">
-      <DependentUpon>FrmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQLKhoHang.resx">
       <DependentUpon>FrmQLKhoHang.cs</DependentUpon>
@@ -139,12 +145,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="FrmQLNhanVien.resx">
       <DependentUpon>FrmQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQLKhachHang.resx">
       <DependentUpon>FrmQLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQLLuongNV.resx">
+      <DependentUpon>FrmQLLuongNV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,6 +165,75 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-arrow-ios-7-interface-symbol_318-33678.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Back-2-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Back-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Back-2-2-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\arrow-back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\arrow-back-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Inventory-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\shop-cart-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Back-Music-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Back-2-2-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479313664_restart-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479313693_restart-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479314974_business-coins-money-stack-salary-outline-stroke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315012_business-coins-money-stack-salary-outline-stroke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479313647_restart-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479314974_business-coins-money-stack-salary-outline-stroke1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315140_Client_Male_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clients-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315443_Shipping3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315485_sign-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315572_application-pgp-signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315644_Money-Increase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479315832_Coins.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

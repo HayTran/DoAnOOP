@@ -23,7 +23,7 @@ namespace QuanLyCuaHang
             {
                 if (a.kiemTraDangNhap() == 1)
                 {
-                    FrmQLTaiKhoan frm1 = new FrmQLTaiKhoan();
+                    FrmMenu frm1 = new FrmMenu();
                     frm1.Show();
                     this.Hide();
                 }
@@ -54,6 +54,16 @@ namespace QuanLyCuaHang
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             KetNoiDuLieu.kiemTra();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
 
        

@@ -21,7 +21,6 @@ namespace QuanLyCuaHang
         {
             btnChapNhan.Enabled = true;
             btnHuy.Enabled = true;
-            btnThem.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
         }
@@ -29,7 +28,6 @@ namespace QuanLyCuaHang
         {
             btnChapNhan.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
         }
@@ -111,6 +109,13 @@ namespace QuanLyCuaHang
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenu frm = new FrmMenu();
+            frm.Show();
+            this.Hide();
         }
 
         

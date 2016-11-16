@@ -16,7 +16,7 @@ namespace QuanLyCuaHang
             InitializeComponent(); 
 
         }
-        public FrmQuanLy ql = new FrmQuanLy();
+
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
             khoiTao();
@@ -109,7 +109,7 @@ namespace QuanLyCuaHang
             else
             {
                 KhachHang kH = new KhachHang(txtMaKH.Text, txtTenKH.Text, radNam.Checked, txtSDT.Text, txtDiaChi.Text);
-                BanHang.luuDonHang();
+                BanHang.luuDonHang(txtGiamGia.Text, txtTienKhachPhaiTra.Text);
                 BanHang.luuKhachHang(kH); ;
                 MessageBox.Show(BanHang.xuatHoaDon(kH));
                 khoiTao();

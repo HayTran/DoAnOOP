@@ -36,7 +36,7 @@ namespace QuanLyCuaHang
             maDH = retMaDH + 1; // tăng mã đơn hàng mới nhất lên 1 đơn vị để cung cấp MaDH cho khách hàng tiếp theo
             return retMaDH;
         }
-
+       
         //  khởi tạo một hóa đơn mới
         public static void khoiTaoHoaDon()
         {
@@ -87,15 +87,23 @@ namespace QuanLyCuaHang
         }
 
         // thực hiện việc lưu thông tin đơn hàng vào bảng DonHa
-        public static void luuDonHang()
+        public static void luuDonHang(string tienGiamGia, string tienThucTe)
         {
             try
             {
                 KetNoiDuLieu.openConnect();
-                KetNoiDuLieu.executeQuery(string.Format("insert into DonHang values ('{0}', '{1}', '{2}', '{3}', '{4}')", maDH, maKH, tinhTongTien(), DateTime.Now, NhanVien.maNVDangNhap));
+                KetNoiDuLieu.executeQuery(string.Format("insert into DonHang values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}','{6}')", 
+                                                                    maDH, 
+                                                                    maKH, 
+                                                                    tinhTongTien(),
+                                                                    Convert.ToString(tienGiamGia),
+                                                                    Convert.ToString(tienThucTe),
+                                                                    DateTime.Now, 
+                                                                    NhanVien.maNVDangNhap));
                 KetNoiDuLieu.closeConnect();
                 luuChiTietDonHang();
                 truSanPham();
+                luuDonHangNV(tienThucTe);
             }
             catch (Exception ex)
             {
@@ -137,6 +145,31 @@ namespace QuanLyCuaHang
                 KetNoiDuLieu.executeQuery("update KhoHang set SoLuong = '" + mH.soLuong + "' where MaMH = '" + arrayMaMH[i] + "'");
                 KetNoiDuLieu.closeConnect();
             }
+        }
+         //luư đơn hành xuống bảng Lương Nhân viên
+        public static void luuDonHangNV(string tienThucTe)
+        {
+             try
+            {
+                KetNoiDuLieu.openConnect();
+                SqlCommand cmdSelect_SoDonHang = new SqlCommand(string.Format("SELECT SoDonHang FROM LuongNV where MaNV = '"+NhanVien.maNVDangNhap+"'"), KetNoiDuLieu.conn);
+                int soDonHangHienTai = Convert.ToInt32(cmdSelect_SoDonHang.ExecuteScalar()) +1;
+          
+                KetNoiDuLieu.closeConnect();
+
+                KetNoiDuLieu.openConnect();
+                SqlCommand cmdSelect_TienBanDuoc = new SqlCommand(string.Format("SELECT TienBanDuoc FROM LuongNV where MaNV = '" + NhanVien.maNVDangNhap + "'"), KetNoiDuLieu.conn);
+                int soTienBanDuoc = Convert.ToInt32(cmdSelect_TienBanDuoc.ExecuteScalar()) + Convert.ToInt32(tienThucTe);
+                KetNoiDuLieu.closeConnect();
+                 KetNoiDuLieu.openConnect();
+                 KetNoiDuLieu.executeQuery("update LuongNV set SoDonHang = '" +soDonHangHienTai + "', TienBanDuoc = '"+soTienBanDuoc+"' where MaNV = '" + NhanVien.maNVDangNhap + "'");
+                 KetNoiDuLieu.closeConnect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
     }
